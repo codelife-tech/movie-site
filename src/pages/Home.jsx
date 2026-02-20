@@ -1,7 +1,7 @@
 import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react";
 import { searchMovies, getPopularMovies } from "../services/api";
-import "../css/Home.css";
+import "../CSS/Home.css";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,14 +32,14 @@ function Home() {
 
     setLoading(true)
     try {
-        const searchResults = await searchMovies(searchQuery)
-        setMovies(searchResults)
-        setError(null)
+      const searchResults = await searchMovies(searchQuery)
+      setMovies(searchResults)
+      setError(null)
     } catch (err) {
-        console.log(err)
-        setError("Failed to search movies...")
+      console.log(err)
+      setError("Failed to search movies...")
     } finally {
-        setLoading(false)
+      setLoading(false)
     }
   };
 
@@ -58,7 +58,7 @@ function Home() {
         </button>
       </form>
 
-        {error && <div className="error-message">{error}</div>}
+      {error && <div className="error-message">{error}</div>}
 
       {loading ? (
         <div className="loading">Loading...</div>
